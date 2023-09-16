@@ -16,11 +16,20 @@ childElement.textContent=obj.email +"---"+obj.phone
  
 let deleteButton=document.createElement("button")
 deleteButton.appendChild(document.createTextNode("delete"))
+let editButton=document.createElement("button")
+editButton.appendChild(document.createTextNode("edit"))
+childElement.appendChild(editButton)
 parentElement.appendChild(childElement)
 childElement.appendChild(deleteButton)
 deleteButton.onclick=()=>{
     parentElement.removeChild(childElement)
     localStorage.removeItem("userDetail")
+}
+editButton.onclick=()=>{
+    parentElement.removeChild(childElement)
+    localStorage.removeItem("userDetail")
+    document.getElementById("exampleInputEmail1").value=obj.email
+    document.getElementById("exampleInputPassword1").value=obj.phone
 }
 
 
